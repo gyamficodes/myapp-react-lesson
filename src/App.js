@@ -1,23 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+"use client";
+
+import Add from "./components/Add";
+import Cart from "./components/Cart";
+import State from "./components/State";
+import { useState, useEffect } from "react";
+import Form from "./components/Form";
+import Useeffect from "./components/Useeffect";
+
+// first import  creatcontext api 
+import { createContext } from "react";
+// create an instace for the (createcontext )
+export const Data = createContext();
+
 
 function App() {
+ 
+
+  const name = "John";
+
+  // const message = 'Please Huxun course is good';
+
+
+  const [theme, setTheme] = useState("light_mode"); // Change default theme to "light_mode"
+  const options = [
+    { text: "dark_mode", icon: "dark_mode" },
+    { text: "light_mode", icon: "light_mode" },
+  ];
+
+  useEffect(() => {
+    if (theme === "dark_mode") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-white text-black dark:bg-slate-800 dark:text-white">
+
+<Useeffect /> 
+
+
+      <div className="fixed top-5 right-10 duration-200 bg-slate-800 dark:bg-slate-700">
+        {options.map((opt) => (
+          <button
+            onClick={() => setTheme(opt.text)}
+            key={opt.text}
+            className={`w-8 h-8 text-xl leading-9 bg-slate-600 ${
+              theme === opt.text && "text-sky-600"
+            }`}
+          >
+            <span className="material-symbols-outlined">{opt.icon}</span>
+          </button>
+        ))}
+      </div>
+      <Add name={name} text="Fullstack Developer" age="22" info="Focused">
+        <p className="duration-150">Hello please this is slot</p>
+      </Add>
+      <Cart />
+      <State />
+      <Form/>
+
+
+
+
+
+<h1>dfddsgufsjdk.</h1>
+
     </div>
   );
 }
