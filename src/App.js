@@ -18,7 +18,7 @@ function App() {
 
   const name = "John";
 
-  // const message = 'Please Huxun course is good';
+  const message = 'Please Huxun course is good and this provide abd inject in react 👍';
 
 
   const [theme, setTheme] = useState("light_mode"); // Change default theme to "light_mode"
@@ -38,9 +38,11 @@ function App() {
 
   return (
     <div className="App bg-white text-black dark:bg-slate-800 dark:text-white">
-
+{/* we have to wrap our component with provider  component*/}
+<Data.Provider value={message}>
 <Useeffect /> 
-
+</Data.Provider>
+{/* we have to wrap our component with provider  component*/}
 
       <div className="fixed top-5 right-10 duration-200 bg-slate-800 dark:bg-slate-700">
         {options.map((opt) => (

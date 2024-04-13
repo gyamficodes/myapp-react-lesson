@@ -1,11 +1,16 @@
 // import { useEffect, useState } from "react";
 
+import { Data } from "../App"
 
 const Useeffect = () => {
   
   return (
     <>
-    <h1> this is use effect component</h1>
+ <Data.Consumer>
+  {(message) => (
+    <h1 className="text-red-500 text-[30px]">{message}</h1>
+  )}
+ </Data.Consumer>
 
     </>
   )
