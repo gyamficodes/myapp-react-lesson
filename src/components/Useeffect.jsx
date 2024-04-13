@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 
-import { Data } from "../App"
+import { Data } from "../App";
 
 const Useeffect = () => {
   

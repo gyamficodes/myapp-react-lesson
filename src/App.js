@@ -1,12 +1,12 @@
 "use client";
-
+import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
 import Cart from "./components/Cart";
 import State from "./components/State";
 import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Useeffect from "./components/Useeffect";
-
+import Context from "./components/Context";
 // first import  creatcontext api 
 import { createContext } from "react";
 // create an instace for the (createcontext )
@@ -38,9 +38,12 @@ function App() {
 
   return (
     <div className="App bg-white text-black dark:bg-slate-800 dark:text-white">
+<UserReducer/>
+
 {/* we have to wrap our component with provider  component*/}
 <Data.Provider value={message}>
 <Useeffect /> 
+<Context/>
 </Data.Provider>
 {/* we have to wrap our component with provider  component*/}
 
