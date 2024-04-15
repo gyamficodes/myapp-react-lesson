@@ -7,20 +7,17 @@ import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Useeffect from "./components/Useeffect";
 import Context from "./components/Context";
-import Ref from "./components/Ref";
-// first import  creatcontext api 
+// import Ref from "./components/Ref";
+// first import  creatcontext api
 import { createContext } from "react";
 // create an instace for the (createcontext )
 export const Data = createContext();
 
-
 function App() {
- 
-
   const name = "John";
 
-  const message = 'Please Huxun course is good and this provide abd inject in react 👍';
-
+  const message =
+    "Please Huxun course is good and this provide abd inject in react 👍";
 
   const [theme, setTheme] = useState("light_mode"); // Change default theme to "light_mode"
   const options = [
@@ -36,10 +33,16 @@ function App() {
     }
   }, [theme]);
 
-
   return (
-    <div className="App bg-white text-black dark:bg-slate-800 dark:text-white">
-      <Ref/>
+    <div className="App bg-white text-black dark:bg-slate-800 dark:text-white ">
+      <div className=" grid grid-cols-2 w-full">
+        <div className=" w-full">
+          <h1 className=" text-[50px] text-blue-700">👍project place</h1>
+        </div>
+     
+        <div className=" w-full">
+        <h1 className=" text-[50px] text-blue-700">✔ lesson place</h1>
+          {/* <Ref/> */}
       <UserReducer/>
 
 {/* we have to wrap our component with provider  component*/}
@@ -75,6 +78,8 @@ function App() {
 
 <h1>dfddsgufsjdk.</h1>
 
+        </div>
+      </div>
     </div>
   );
 }
