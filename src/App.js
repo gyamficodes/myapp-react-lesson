@@ -1,4 +1,8 @@
 "use client";
+// project
+import Counter from "./components/Counter.jsx/Counter";
+import Todo from "./components/TodoProject/Todo";
+// project
 import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
 import Cart from "./components/Cart";
@@ -7,17 +11,17 @@ import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Useeffect from "./components/Useeffect";
 import Context from "./components/Context";
-// import Ref from "./components/Ref";
+import Ref from "./components/Ref";
 // first import  creatcontext api
 import { createContext } from "react";
+
 // create an instace for the (createcontext )
 export const Data = createContext();
 
 function App() {
   const name = "John";
 
-  const message =
-    "Please Huxun course is good and this provide abd inject in react 👍";
+  const message ="Please believe in yourself and this provide and inject in react 👍";
 
   const [theme, setTheme] = useState("light_mode"); // Change default theme to "light_mode"
   const options = [
@@ -38,12 +42,16 @@ function App() {
       <div className=" grid grid-cols-2 w-full">
         <div className=" w-full">
           <h1 className=" text-[50px] text-blue-700">👍project place</h1>
+  <div className=" flex items-center gap-[3em] flex-col">
+  <Counter/>
+  <Todo/>
+  </div>
         </div>
      
         <div className=" w-full">
         <h1 className=" text-[50px] text-blue-700">✔ lesson place</h1>
-          {/* <Ref/> */}
-      <UserReducer/>
+          <Ref/>
+ 
 
 {/* we have to wrap our component with provider  component*/}
 <Data.Provider value={message}>
@@ -74,7 +82,7 @@ function App() {
 
 
 
-
+      <UserReducer/>
 
 <h1>dfddsgufsjdk.</h1>
 
