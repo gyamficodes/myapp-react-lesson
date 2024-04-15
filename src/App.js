@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Useeffect from "./components/Useeffect";
 import Context from "./components/Context";
+import Ref from "./components/Ref";
 // first import  creatcontext api 
 import { createContext } from "react";
 // create an instace for the (createcontext )
@@ -38,7 +39,8 @@ function App() {
 
   return (
     <div className="App bg-white text-black dark:bg-slate-800 dark:text-white">
-<UserReducer/>
+      <Ref/>
+      <UserReducer/>
 
 {/* we have to wrap our component with provider  component*/}
 <Data.Provider value={message}>
