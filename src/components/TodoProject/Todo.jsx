@@ -8,17 +8,15 @@ const Todo = () => {
     return Math.floor(Math.random() * 100);
   };
 
-const removeTodo = (id) => {
-   setTodos((todos) =>  todos.filter((t)  => t.id !== id))
-}
+const removeTodo = (id) => setTodos((todos) =>  todos.filter((t)  => t.id !== id))
+
 
   const handdleSubmit = () => {
-    setTodos(todos => 
-      todos.concat({
-        text:input,
-        id:generateId()
-      })
-    )
+    const newTodos = {
+      text: input,
+      id: generateId()
+    }
+    setTodos((prevTodos) => [...prevTodos, newTodos]);
     setInput(""); 
   }
   return (
