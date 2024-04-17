@@ -2,6 +2,7 @@
 // project
 import Counter from "./components/Counter.jsx/Counter";
 import Todo from "./components/TodoProject/Todo";
+import Main from "./components/Meal/Main";
 // project
 import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
@@ -39,12 +40,13 @@ function App() {
 
   return (
     <div className="App bg-white text-black dark:bg-slate-800 dark:text-white ">
-      <div className=" grid grid-cols-2 w-full">
+      <div className=" grid grid-cols-2 gap-4 w-full">
         <div className=" w-full">
           <h1 className=" text-[50px] text-blue-700">👍project place</h1>
   <div className=" flex items-center gap-[3em] flex-col">
   <Counter/>
   <Todo/>
+  <Main/>
   </div>
         </div>
      

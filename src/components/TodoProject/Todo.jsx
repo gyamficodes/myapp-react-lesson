@@ -5,7 +5,7 @@ const Todo = () => {
   const [input, setInput] = useState("");
 
   const generateId = () => {
-    return Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 100);
   };
 
 const removeTodo = (id) => {
@@ -23,9 +23,9 @@ const removeTodo = (id) => {
   }
   return (
     <>
-      <div className=" flex items-center justify-center flex-col">
+      <div className=" flex items-center justify-center flex-col  h-auto py-4 w-full   bg-slate-200 shadow-xl">
         <h1>🐱‍💻Todos</h1>
-<div className=" flex items-center gap-2">
+<div className=" flex items-center gap-2 mb-5">
 <input
           type="text"
           className=" mt-5 border  h-[50px] pl-5"
@@ -35,11 +35,11 @@ const removeTodo = (id) => {
         />
         <button onClick={handdleSubmit} className=" text-white px-7 py-5 bg-slate-500 mt-4">Submit</button>
 </div>
-<ul className=" flex items-center gap-4">
+<ul className=" flex items-center  flex-col gap-4">
 {
   todos.map(({text, id}) => {
      return <>
-     <li className=" w-auto px-3 h-[50px] bg-white shadow-lg  flex items-center justify-center gap-4" key={id}>{text}
+     <li className=" w-[300px] px-3 h-[50px] bg-white shadow-lg  flex items-center   justify-between rounded-xl   capitalize" key={id}>{text}
      <button className=" w-5 hover:scale-[1.04] transition-all ease-in-out duration-200 h-5 border flex items-center justify-center border-red-600" onClick={() => removeTodo(id)}>X</button>
      </li>
      </> 

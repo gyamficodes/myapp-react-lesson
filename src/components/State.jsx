@@ -29,7 +29,7 @@ const State = () => {
     setFriends( friends.filter(f => f !==   "John"))
 }
 
-const [movies, setMovies] = useState([
+const [movies] = useState([
   {
     id: 1,
     title: "The Green Building",
