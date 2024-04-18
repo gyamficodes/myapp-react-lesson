@@ -3,7 +3,7 @@
 import Counter from "./components/Counter.jsx/Counter";
 import Todo from "./components/TodoProject/Todo";
 import Main from "./components/Meal/Main";
-import Calculator from "./Calculator/Calculator";
+import Calculator from "./Calculator/Toggle";
 // project
 import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
