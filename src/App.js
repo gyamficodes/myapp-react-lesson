@@ -5,6 +5,8 @@ import Todo from "./components/TodoProject/Todo";
 import Main from "./components/Meal/Main";
 import Calculator from "./Calculator/Toggle";
 import Testimonial from "./components/Testimonial/Testimonial";
+import Accordian from "./components/Accordian/Accordian";
+import { articles } from "./components/Accordian/Utils/Content";
 // project
 import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
@@ -49,6 +51,11 @@ function App() {
   <Counter/>
   <Todo/>
   <Testimonial/>
+  {articles.map(({titile, content}) => (
+ <Accordian titile={titile}  content={content} />
+))
+  
+}
   <Calculator/>
   <Main/>
   </div>
