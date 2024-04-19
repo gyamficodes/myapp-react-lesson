@@ -4,6 +4,7 @@ import Counter from "./components/Counter.jsx/Counter";
 import Todo from "./components/TodoProject/Todo";
 import Main from "./components/Meal/Main";
 import Calculator from "./Calculator/Toggle";
+import Testimonial from "./components/Testimonial/Testimonial";
 // project
 import UserReducer from "./components/UserReducer";
 import Add from "./components/Add";
@@ -47,9 +48,9 @@ function App() {
   <div className=" flex items-center gap-[3em] flex-col">
   <Counter/>
   <Todo/>
+  <Testimonial/>
   <Calculator/>
   <Main/>
-
   </div>
         </div>
      
