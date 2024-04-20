@@ -51,8 +51,8 @@ function App() {
   <Counter/>
   <Todo/>
   <Testimonial/>
-  {articles.map(({titile, content}) => (
- <Accordian titile={titile}  content={content} />
+  {articles.map(({title, content}) => (
+ <Accordian title={title}  content={content} key={Math.random() * 100}/>
 ))
   
 }
