@@ -3,6 +3,8 @@ import { useState } from "react";
 const Todo = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+   const  [news, setNews] = useState("")    
+
 
   const generateId = () => {
     return Math.floor(Math.random() * 100);
@@ -14,6 +16,7 @@ const removeTodo = (id) => setTodos((todos) =>  todos.filter((t)  => t.id !== id
   const handdleSubmit = () => {
     const newTodos = {
       text: input,
+      date: news,
       id: generateId()
     }
     setTodos((prevTodos) => [...prevTodos, newTodos]);
@@ -31,14 +34,19 @@ const removeTodo = (id) => setTodos((todos) =>  todos.filter((t)  => t.id !== id
           onChange={(e) => setInput(e.target.value)}
           placeholder=" New Todo"
         />
+        <input type="date" className="mt-5 border  h-[50px] pl-5" value={news}  placeholder="Todo description"  onChange={(e) => setNews(e.target.value)} />
         <button onClick={handdleSubmit} className=" text-white px-7 py-5 bg-slate-500 mt-4">Submit</button>
 </div>
 <ul className=" flex items-center  flex-col gap-4">
 {
-  todos.map(({text, id}) => {
+  todos.map(({text, id, date}) => {
      return <>
-     <li className=" w-[300px] px-3 h-[50px] bg-white shadow-lg  flex items-center   justify-between rounded-xl   capitalize" key={id}>{text}
-     <button className=" w-5 hover:scale-[1.04] transition-all ease-in-out duration-200 h-5 border flex items-center justify-center border-red-600" onClick={() => removeTodo(id)}>X</button>
+     <li className=" w-[300px] px-3 h-[auto] py-3 bg-white shadow-lg   rounded-xl   capitalize" key={id}>
+    <div className="flex items-center   justify-between ">
+      <h1>{text}</h1>
+    <button className=" w-5 hover:scale-[1.04] transition-all ease-in-out duration-200 h-5 border flex items-center justify-center border-red-600" onClick={() => removeTodo(id)}>X</button>
+    </div>
+    <h1 className=" flex items-center justify-center mt-1">Date: {date} </h1>
      </li>
      </> 
   })
